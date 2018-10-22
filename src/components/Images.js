@@ -12,7 +12,7 @@ class Images extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000')
+    axios.get('http://13.125.111.99/')
       .then(res => {
         const images = res.data;
         this.setState({ images });
@@ -22,7 +22,7 @@ class Images extends Component {
   handleClick(e) {
     let authorName = e.target.getAttribute('authorname');
     // console.log('Clicked image', authorName);
-    axios.get(`http://localhost:3000/author/${authorName}`)
+    axios.get(`http://13.125.111.99/author/${authorName}`)
       .then(res => {
         this.setState({
           images: res.data
